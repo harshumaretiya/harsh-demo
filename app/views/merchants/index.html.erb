@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+
+<%= form_tag import_merchants_path, multipart: true do %>
+
+  <div class="bg-white border border-blue">
+
+    <div class="d-flex px-3 justify-content-between">
+      <div class="m-2">
+        <%= file_field_tag :file %>
+      </div>
+      <div class="form-inline my-2 my-lg-0">
+        <%= submit_tag "Import", class: "btn btn-success m-2"%>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<h1>Merchants</h1>
+<%= Merchant.count %>
+
+
