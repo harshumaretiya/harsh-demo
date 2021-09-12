@@ -28,6 +28,16 @@ class Api::V1::MerchantsController < Api::V1::AuthenticatedController
     json_response(MerchantSerializer.new(merchant_list).serializable_hash[:data].map {|merchant| merchant[:attributes]},MetaGenerator.new.generate!(merchant_list))    
   end
 
+  #POST /api/v1/merchants
+  def create
+    begin
+      merchant = @current_user.merchants.create!(merchant_params)
+    rescue => e 
+      render_exception(e, 422) && return
+    end
+    json_response(MerchantSerializer.new(merchant).serializable_hash[:data][:attributes])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_merchant

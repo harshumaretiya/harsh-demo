@@ -157,6 +157,10 @@ GEM
       activerecord
       kaminari-core (= 1.2.1)
     kaminari-core (1.2.1)
+    launchy (2.5.0)
+      addressable (~> 2.7)
+    letter_opener (1.7.0)
+      launchy (~> 2.2)
     listen (3.5.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -192,6 +196,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-proxy (0.7.0)
       rack
     rack-test (1.1.0)
@@ -357,10 +363,12 @@ DEPENDENCIES
   jbuilder (~> 2.10)
   jquery-growl-rails
   jquery-rails
+  letter_opener
   listen (>= 3.0.5, < 3.6)
   pg (>= 0.18, < 2.0)
   pry
   puma (< 6)
+  rack-cors
   rails (~> 6.0)
   rubocop
   rubocop-performance

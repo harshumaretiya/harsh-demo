@@ -102,3 +102,7 @@ gem 'fast_jsonapi'
 gem 'will_paginate'
 
 gem 'activerecord-import'
+
+gem "letter_opener"
+
+gem 'rack-cors'

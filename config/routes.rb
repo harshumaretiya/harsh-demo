@@ -68,7 +68,7 @@ Rails.application.routes.draw do
       resources :todos, only: [:index, :create, :destroy, :update, :show]
 
       #Merchants
-      resources :merchants do 
+      resources :merchants, only: [:create] do 
         collection { post :import }
       end
     end
